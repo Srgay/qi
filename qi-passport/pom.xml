@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>qi-parent</artifactId>
+        <groupId>com.qi</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>qi-passport</artifactId>
+
+
+    <dependencies>
+
+    <!-- springboot亲儿子thymeleaf -->
+    <dependency>
+        <groupId>com.qi</groupId>
+        <artifactId>qi-common-util</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>springboot04</finalName>
+        <!-- 配置了很多插件 -->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--fork:设置True，否则可能devtools不会起作用-->
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
