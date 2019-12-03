@@ -1,5 +1,6 @@
-package com.qi.controller;
+package com.qi;
 
+import com.qi.project.test.controller.user;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -42,12 +43,23 @@ public class ProviderApplication {
 			return "ok";
 		}
 
-		@RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
-		public String echo(@PathVariable String string) {
-			return "hello Nacos Discovery " + string;
+		@RequestMapping(value = "/echo", method = RequestMethod.GET,produces = { "application/json; charset=utf-8" })
+		@ResponseBody
+		public user echo(@PathVariable String string) {
+			//return new String("hello Nacos Discovery " + string);
+			user user =new user();
+			return user;
+		}
+
+		@RequestMapping(value = "/echo/{string}", method = RequestMethod.GET,produces = { "application/json; charset=utf-8" })
+		@ResponseBody
+		public String echo1(@PathVariable String string) {
+			return new String("hello Nacos Discovery " + string);
+
 		}
 
 		@RequestMapping(value = "/divide", method = RequestMethod.GET)
+		@ResponseBody
 		public String divide(@RequestParam Integer a, @RequestParam Integer b) {
 			return String.valueOf(a / b);
 		}
