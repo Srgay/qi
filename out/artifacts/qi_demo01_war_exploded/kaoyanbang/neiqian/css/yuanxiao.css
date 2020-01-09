@@ -1,0 +1,33 @@
+body {
+	width: 1200px;
+	margin: 0;
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+	 */
+}
+
+div {}
+
+.grid-content {
+	border-radius: 4px;
+	min-height: 40px;
+}
+
+.maintable {}
+
+.logo {
+	height: 80px;
+}
+
+.select {
+	height: 36px;
+}
+
+.text {
+	color: #999;
+	margin: 10px 0 10px 0;
+	text-align: left;
+	font: 14px/1.8 "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, sans-serif;
+}
+.list-th{
+	margin: 10px 0 0 0;
+}

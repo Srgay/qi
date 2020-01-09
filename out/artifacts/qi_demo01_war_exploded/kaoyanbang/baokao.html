@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+		<link type="text/css" rel="stylesheet" href="css/foot.css" />
+		<link type="text/css" rel="stylesheet" href="css/head.css" />
+		<link type="text/css" rel="stylesheet" href="css/fsnew.css" />
+	</head>
+	<body>
+		<div id="app" class="app">
+			<el-container>
+				<el-header class="top-nav-wrapper" style="height: 40px;">
+					<div class="main top-nav clearfix">
+						<div class="top-nav-list">
+							<a href="/" class="top-nav-home"> </a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/baokao.html" target="_blank">报考首页</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/yuanxiaoku.html" target="_blank">院校库</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/beikao.html">备考首页</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/yuanxiaoku.html">院校库</a>
+							<a href="/">在线咨询</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/fushi.html" target="_blank">复试信息</a>
+
+							<a href="/">论坛首页</a></li>
+							<a href="/">相关资料</a></li>
+							<span class="top-nav-hide">
+								<span class="top-nav-point">• • •</span>
+								<div class="top-nav-pop">
+									<ul>
+										
+									</ul>
+								</div>
+							</span>
+						</div>
+						<div class="top-nav-load">
+							<a :href="loginurl" target="_blank">{{state}}</a>
+							|
+							<a :style="regist" href="http://localhost:8082/qidemo01/kaoyanbang/regist.html" target="_blank">注册</a>
+							|
+							<a href="/help/">帮助中心</a>
+						</div>
+
+					</div>
+				</el-header>
+				<el-main style="height: 900px;">
+
+
+					<div class="main">
+						<iframe src="neiqian/baokao.html" height="100%" width="1260" frameborder="0"></iframe>
+						</el-aside>
+					</div>
+
+
+
+				</el-main>
+			<el-footer style="height: 200px;">
+				<div class="main footer-wrapper">
+					<div class="footer">
+						<div class="footer-list">
+							<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang/my.html" target="_blank">中心简介</a>
+							<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">关于我们</a>
+							<a href="" target="_blank">版权声明</a>
+							<a href="/help/" target="_blank">帮助中心</a>
+							<a href="" target="_blank">网站地图</a>
+							<a href="" target="_blank">宣传代理</a>
+						</div>
+						<div class="footer-units">
+							主办单位：<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a><br>
+							Copyright © 2003-2020 <a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a> All Rights Reserved<br>
+							<a href="http://beian.miit.gov.cn" target="_blank">*************</a>
+						</div>
+						<div class="footer-media">
+							<a href="/" target="_blank"><i class="el-icon-service" title="官方微信"></i>官方微信</a>
+							<a href="/" target="_blank"><i class="el-icon-service" title="官方微博"></i>官方微博</a>
+						</div>
+						<div class="footer-msg">
+							服务热线：88888888888<br>
+							客服邮箱：88888888@qq.com<br>
+						</div>
+					</div>
+				</div>
+			</el-footer>
+			</el-container>
+		</div>
+	</body>
+	<!-- import Vue before Element -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- import JavaScript -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script>
+		var example1 = new Vue({
+			el: '.app',
+			data: {
+				visible: false,
+				state: '登录',
+				loginurl: 'http://localhost:8082/qidemo01/kaoyanbang/login.html',
+				regist: ''
+			},
+			created() {
+				this.loginstate();
+			},
+			methods: {
+				handleLogin() {
+
+				},
+				loginstate() {
+					let username = Cookies.get("username");
+					console.log(Cookies.get("username"));
+					if (username != null) {
+						this.state = '欢迎你' + username;
+						this.loginurl = 'my.html'
+						this.regist = 'display: none;';
+					}
+				},
+			}
+		});
+	</script>
+	<script src="js/loginstate.js"></script>
+</html>

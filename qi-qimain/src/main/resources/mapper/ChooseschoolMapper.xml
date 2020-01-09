@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qi.project.baokao.mapper.ChooseschoolMapper">
+  <!--<resultMap id="BaseResultMap" type="com.qi.project.baokao.domain.Chooseschool">
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qi.project.baokao.domain.Chooseschool">
+    insert into chooseschool (city, school, address,
+      picture)
+    values (#{city,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{picture,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select city, school, address, picture
+    from chooseschool
+  </select>-->
+</mapper>

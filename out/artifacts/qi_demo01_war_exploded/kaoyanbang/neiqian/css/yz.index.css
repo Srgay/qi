@@ -1,0 +1,138 @@
+﻿blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,
+h6,hr,input,legend,li,ol,p,pre,td,textarea,th,
+ul {margin:0;padding:0}
+body,button,input,select,textarea 
+{font:14px/1.75 \5FAE\8F6F\96C5\9ED1,\5b8b\4f53,sans-serif,
+tahoma,arial,'Hiragino Sans GB';  color: #333}
+h1,h2,h3,h4,h5,h6 {font-size:100%}
+address,cite,dfn,em,var {font-style:normal}
+code,kbd,pre,samp {font-family:courier new,courier,monospace}
+ol,ul{list-style:none}
+img{display: block;border: 0 none;}
+input:focus,select:focus{outline: 0 none;}
+a {color:#333;text-decoration:none;outline: 0 none;}
+a:hover {color:#f60;text-decoration: underline;}
+
+.clear:after,.w1000:after,.classNav:after,.collegeList:after,
+.nav:after,.indexTab:after,.slist:after,.srlist:after,
+.picAdList:after,.groupList:after,.tabKinds:after,
+.headnews:after,.areaTab:after,.bbsTimeline li:after,
+.schoolList li:after,.schoolListItem dd:after,.hotTab:after,
+.hsList:after,.bkStep:after,.recentZslist:after,.zsSelectArea
+ ul:after,.areaZslist:after,.areaZslist li:after,
+ .courseArea:after,.courseTabCon:after,.specialTitle dt:after,
+ .specialTitle dd:after,.xkList:after,.specialInfoItem dl:after,
+ .zyFinalArea:after,.finalQuick:after,.rtab:after,
+ .srlist li:after,.scoreLine:after,.college34:after,
+ .onlineClass:after,.tjScoreline:after,.bookList li:after,
+ .hzZsItem:after,.hzImgWz:after,.schoolInfoSearch:after,
+ .sitemapArea ul:after,.fsTable ul:after,
+ #jianzhang .fsTable ul li p:after,
+ .related_info:after{content:'\20';display:block;height:0;clear:both}
+.clear,.w1000,.classNav,.classNav,.collegeList,.nav,
+.indexTab,.slist,.srlist,.picAdList,.groupList,.tabKinds,
+.headnews,.areaTab,.bbsTimeline li,.schoolList li,
+.schoolListItem dd,.hotTab,.hsList,.bkStep,.recentZslist,
+.zsSelectArea ul,.areaZslist,.areaZslist li,.courseArea,
+.courseTabCon,.specialTitle dt,.specialTitle dd,.xkList,
+.specialInfoItem dl,.zyFinalArea,.finalQuick,.rtab,.srlist li,
+.scoreLine,.college34,.onlineClass,.tjScoreline,.bookList li,
+.hzZsItem,.hzImgWz,.schoolInfoSearch,..sitemapArea ul,
+.fsTable ul,#jianzhang .fsTable ul li p, .related_info{*zoom:1}
+.fl{float:left;}
+.fr{float:right;}
+
+.f12{ font-size: 12px;}
+
+.mb20{margin-bottom:20px;}
+.mb25{margin-bottom:25px;}
+.mb30{margin-bottom:30px;}
+.mtpt20{margin-top:20px;padding-top:20px;border-top:#ccc 1px dashed;}
+.more i{ font-size: 8px; font-style: normal; font-family:\5b8b\4f53 }
+.w1000,.w1000ad{width:1000px;margin:0 auto 20px;}
+.w960{width:960px;margin:0 auto 20px;}
+.w470{width:470px;}
+.w250{width:250px;}
+.w525{width:525px;}
+.w390{width:390px;}
+
+.topAd{width:960px;margin:10px auto 0;}
+.headerAd{width:1000px; text-align: center; height: 90px; overflow: hidden; margin: 10px auto}
+.dropdown strong,.searchBtn,.sNavMore a,.list li,.slist li,
+.adslist li,.subTitle,.rTitle,.sblist li,.addlist li,.tabKinds a,
+.yzAreaTri,.yzAreaList li,.yzCurArea i,.areaTab li a i,
+.bbsTimeline li span.dot,.bbsTime,.lTitle,.curAreaIcon,
+.quickItem a,.scoreItem a.bbsItem,.loTitle,.classKind,
+.classMore,.zsSelectArea ul li,.beikStep li span,.kcTitle,
+.specialTitle dt em,.specialTitle dd,.specialTitle dd em,
+.zyFinalRight ul li,.zycmdTitle,
+#shareBtn .bdshare-button-style0-32 a,.zyFcTitle,.finalQuick li,
+.finalQuick li a,.videoList li,.kcList li,.searchBtn,
+.kcKindGuide a,
+.hzlist li{ background: url(http://img.kaoyan.com/yz/images/yzindex_bg.png) no-repeat;
+_background: url(http://img.kaoyan.com/yz/images/yzindex_bg8.png) no-repeat;}
+
+.tabMore{ position: absolute; color: #3b639f; right: 8px; top: 8px; font-size: 10px; font-family: \5b8b\4f53}
+.tabMore a{ color: #3b639f; font-size: 12px;}
+
+.list li,
+.adslist li{ background-position: -196px -115px; padding-left:15px; line-height: 26px; height:26px;  overflow: hidden; }
+.list{position:relative;}
+
+.bkbTt{background: #f3f6fb;border:#d7e1ea 1px solid; margin-bottom: 10px; height: 37px; position: relative; }
+.bkbTitle{background: #fff; border:#d7e1ea 1px solid; border-top:#69a9e0 3px solid; border-bottom:0 none;margin: -1px 0 -1px -1px; height:37px; line-height: 32px; border-top:#69a9e0 3px solid; padding:0 20px; float: left; }
+
+.zsLeft{width:180px; float: left;}
+
+.zsRight{width:800px; float: right;}
+
+.specialTitle{width:178px;  background: #f3f6fb; border:#d7e1ea 1px solid; padding-bottom: 15px}
+.specialTitle dt{height:32px; background: url(http://img.kaoyan.com/yz/images/bk_left_tbg.jpg) repeat-x; padding-left:15px; height:42px; margin-bottom: -1px;}
+#zhuanerTitle.specialTitle dt{ line-height: 42px; padding-left:15px;}
+
+.specialTitle dt strong,.specialTitle dd strong{float: left; font-size: 16px; line-height: 40px; margin-left: 5px; display: inline;}
+.specialTitle dd strong{ font-size: 14px; line-height: 48px; font-weight: normal; margin-left: 8px;}
+.specialTitle dd{border-top:#dde4ee 1px solid; background-position:  135px -95px; height: 48px; display: block;margin:0 12px;}
+#zhuanerTitle.specialTitle dd{ line-height: 48px; padding-left: 10px; font-size: 14px}
+
+.zyTitleBg {
+	width:736px;
+	margin:0 auto 20px;
+	padding:0 0 0 64px; 
+	height: 80px; 
+	line-height:72px;
+	font-size: 40px; 
+	font-weight:normal; 
+	position:relative;
+	background:url(BeiKao/bk.jpg) ; 
+	color: #fff;
+}
+.zyFinalArea{border:#e5e5e5 1px solid; border-top:#69a9e0 3px solid; padding: 15px 20px; background: #fff; margin-bottom: 20px;}
+.zyFinalLeft{ float: left; width: 450px;}
+.zyheadline{font:18px/30px "\5FAE\8F6F\96C5\9ED1";  height: 30px; overflow: hidden; margin-bottom: 6px;}
+.zyheadline a{color:#0488d3;}
+.zycmdTitle{ background-position: 0 -284px; width: 78px; padding-left: 12px;  line-height: 25px; height: 24px; color: #fff; margin:12px 0;}
+.zySubjectList li{width:190px; float: left; margin-right: 20px; display: inline;}
+.articleCon {
+    color: #333;
+    line-height: 28px;
+    margin-bottom: 30px;
+    width: 1000px;
+    overflow: hidden;
+    font-size: 16px;
+    text-align: justify;
+}
+.artMian {
+	align: center;
+    width: 1000px;
+    float: left;
+}
+.articleTitle {
+    font: 28px/44px "\5FAE\8F6F\96C5\9ED1";
+    color: #333;
+    margin-bottom: 10px;
+}
+.waper {
+    width: 1000px;
+    margin: 0 auto;
+}

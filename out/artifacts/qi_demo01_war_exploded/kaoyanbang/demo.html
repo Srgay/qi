@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	</head>
+	<body>
+		<div id="example-1">
+			<ul>
+				<li v-for="(item in items">
+					{{item.message}}{{item.aaa}}
+				</li>
+			</ul>
+			<button type="button" @click="login">登录</button>
+			<input v-model="message" placeholder="edit me">
+			<p>Message is: {{ message }}</p>
+		</div>
+	</body>
+	<script>
+		axios.defaults.baseURL = 'http://10.202.42.24:8080/sf-cloud-web'
+		var example1 = new Vue({
+			el: '#example-1',
+			data: {
+				parentMessage: 'Parent',
+				message:"",
+				items: [{
+						message: 'Foo',
+						aaa:"aaaasd"
+					},
+					{
+						message: 'Bar',
+						aaa:"aaaasd"
+					}
+				]
+			},
+			methods: {
+				login() {
+					console.log('/user?ID=12345'+this.message);
+					axios.get('/user?ID='+this.message)
+						.then(function(response) {
+							console.log(response);
+							
+						})
+						.catch(function(error) {
+							console.log(error);
+						});
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link type="text/css" rel="stylesheet" href="css/index.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+		<link type="text/css" rel="stylesheet" href="css/foot.css" />
+	</head>
+	<body>
+		<div id="app" class="app">
+			<el-container>
+				<el-header class="" style="height: 110px;">
+					<div class="main ch-header-index">
+						<a class="ch-logo" href="/"> </a>
+						<div class="ch-header-list">
+							<a :href="loginurl" target="_blank">{{state}}</a>
+							<a :style="regist" href="http://localhost:8082/qidemo01/kaoyanbang/regist.html" target="_blank">注册</a>
+							<span class="ch-header-divide">|</span>
+							<a :style="regist" class="ch-superuer" href="http://localhost:8080/qidemo01/#/login" target="_blank">管理部门登录</a>
+							<span class="ch-header-divide">|</span>
+							<a href="/kyzx/kp/wbwx.shtml" target="_blank"><i class="el-icon-service" title="官方微信"></i>官方微信</a>
+							<a href="/kyzx/kp/wbwx.shtml" target="_blank"><i class="el-icon-service" title="官方微博"></i>官方微博</a>
+						</div>
+					</div>
+				</el-header>
+				<el-header class="ch-nav-box-index" style="height: 80px;">
+					<div class="main nav-wrapper">
+						<ul class="nav-index-list clearfix">
+							<li class="nav-first-li clearfix">
+								<div class="nav-th">&nbsp;&nbsp;报考</div>
+								<div class="nav-con">
+									<ul class="nav-td clearfix">
+										<li><a href="http://localhost:8082/qidemo01/kaoyanbang/baokao.html" target="_blank">报考首页</a></li>
+										<li><a href="http://localhost:8082/qidemo01/kaoyanbang/yuanxiaoku.html" target="_blank">院校库</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-cx clearfix">
+								<div class="nav-th">&nbsp;&nbsp;备考</div>
+								<div class="nav-con">
+									<ul class="nav-td clearfix">
+										<li><a href="http://localhost:8082/qidemo01/kaoyanbang/beikao.html">备考首页</a></li>
+										<li><a href="http://localhost:8082/qidemo01/kaoyanbang/yuanxiaoku.html">院校库</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-ss clearfix">
+								<div class="nav-th">&nbsp;&nbsp;复试调剂</div>
+								<div class="nav-con">
+									<ul class="nav-td clearfix">
+										<li><a href="/">在线咨询</a></li>
+										<li><a href="http://localhost:8082/qidemo01/kaoyanbang/fushi.html" target="_blank">复试信息</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-last-li clearfix">
+								<div class="nav-th">&nbsp;&nbsp;论坛</div>
+								<div class="nav-con">
+									<ul class="nav-td clearfix">
+										<li><a href="/">论坛首页</a></li>
+										<li><a href="/">相关资料</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</el-header>
+				<el-main>
+					<div class="main">
+						<el-aside class="zuo" style="float:left;width: 330px;">
+							<div class="index-row part01 clearfix" style="width: 300px;">
+								<div class="yz-left">
+
+									<dl class="part01-left">
+										<div class="leftme1">
+											<dt class="l-head">
+												报名入口</dt>
+											<dd class="l-body">
+												<a href="/yzwb/" target="_blank">硕士统考</a>&nbsp;&nbsp;<a href="/tm/" target="_blank">推荐免试</a>&nbsp;&nbsp;<a
+												 href="/bsbm/" target="_blank">博士</a></dd>
+										</div>
+										<div class="leftme2">
+											<dt class="l-head">
+												录取公示</dt>
+											<dd class="l-body">
+												<a href="/zsgs/" target="_blank">全国硕士生招生信息公开平台</a><br><br><a href="/tm/lqmd.jsp" target="_blank">推免录取信息公开</a></dd>
+										</div>
+										<div class="leftme3">
+											<dt class="l-head">
+												诚信考试</dt>
+											<dd class="l-body">
+												<br><a href="/kyzx/zcdh/201209/20120914/342662418.html" target="_blank">国家教育考试违规处理办法</a><br />
+												<a href="/kyzx/zcdh/201408/20140811/1215967702.html" target="_blank">普通高等学校招生违规行为处理办法</a><br />
+												<a href="/kyzx/kydt/201912/20191211/1857365114.html" target="_blank">全国硕士研究生招生考试考场规则</a><br />
+												<a href="/yzzt/cxky2020" target="_blank">2020诚信研考：违规必究 违法必惩</a></dd>
+										</div>
+										<div class="leftme4">
+											<dt class="l-head">
+												资助政策</dt>
+											<dd class="l-body">
+												<a href="/kyzx/zcdh/201401/20140102/706062525.html" target="_blank">研究生资助政策</a></dd>
+										</div>
+										<div class="leftme5">
+											<dt class="l-head">
+												学习方式</dt>
+											<dd class="l-body">
+												<a href="/kyzx/zcdh/201609/20160914/1554119922.html" target="_blank">全日制</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/kyzx/zcdh/201609/20160914/1554119922.html"
+												 target="_blank">非全日制</a></dd>
+										</div>
+										<div class="leftme6">
+											<dt class="l-head">
+												考试方式</dt>
+											<dd class="l-body">
+												<a href="/kyzx/other/201509/20150920/1295472069.html" target="_blank">全国统一考试</a>&nbsp;&nbsp;<a href="/kyzx/other/201509/20150920/1295472069.html"
+												 target="_blank">联合考试</a>&nbsp;&nbsp;<a href="/kyzx/kp/201108/20110818/227328408.html" target="_blank">单独考试</a&nbsp;&nbsp;a
+													 href="/kyzx/kp/201809/20180905/1718817601.html" target="_blank">推荐免试</a></dd>
+										</div>
+										<div class="leftme7">
+											<dt class="l-head">
+												专项计划</dt>
+											<dd class="l-body">
+												<a href="/kyzx/kp/201108/20110818/227329095.html" target="_blank">强军计划</a><a href="/kyzx/kp/201108/20110818/227329363.html"
+												 target="_blank">援藏计划</a>&nbsp;&nbsp;<a href="/kyzx/kp/200910/20091009/34480737.html" target="_blank">硕师计划</a>&nbsp;&nbsp;<a
+												 href="/kyzx/jybzc/201910/20191008/1831987423.html" target="_blank">少数民族骨干计划</a>&nbsp;&nbsp;<a href="/kyzx/jybzc/201809/20180905/1718844973.html"
+												 target="_blank">退役大学生计划</a></dd>
+									</dl>
+								</div>
+							</div>
+						</el-aside>
+						<el-aside class="zhong" style="float: left;width: 830px;margin: 0 0 0 40px;">
+							<div class="yz-main">
+								<div class="tu" style="height: 560px;width:830px;">
+									<el-carousel :interval="5000" arrow="always" height="560px">
+									    <el-carousel-item>
+									      <img src="img/beida.jpg" width="830px" height="566px">
+									    </el-carousel-item>
+										<el-carousel-item>
+									      <img src="img/qinghua.jpg" width="830px" height="566px">
+									    </el-carousel-item>
+										
+										<el-carousel-item>
+										  <img src="img/shanghai.jpg" width="830px" height="566px">
+										</el-carousel-item>
+									  </el-carousel>
+									
+									
+								</div>
+								<!-- 热门焦点 start -->
+								<div class="index-hot">
+									<br>
+									<h4><a href="https://yz.chsi.com.cn/yzzt/cxky2020" target="_blank"><span style="color: rgb(255, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020诚信研考：违规必究
+												违法必惩</span></a></h4>
+									<p class="sub-hot"><span class="green-badge label arrowed-right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相关政策&nbsp;</span><a
+										 href="/kyzx/jybzc/201908/20190819/1814520332.html" target="_blank">&nbsp;&nbsp;&nbsp;2020年全国硕士研究生招生工作管理规定</a></p>
+
+								</div>
+
+							</div>
+						</el-aside>
+					<!-- 	<el-aside class="you" style="float:right;margin:0 0 0 30px;width: 280px;">
+							
+						</el-aside> -->
+					</div>
+				</el-main>
+				<el-footer style="height: 200px;">
+					<div class="main footer-wrapper">
+						<div class="footer">
+							<div class="footer-list">
+								<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a>
+								<a href="http://localhost:8082/qidemo01/kaoyanbang/my.html" target="_blank">中心简介</a>
+								<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">关于我们</a>
+								<a href="" target="_blank">版权声明</a>
+								<a href="/help/" target="_blank">帮助中心</a>
+								<a href="" target="_blank">网站地图</a>
+								<a href="" target="_blank">宣传代理</a>
+							</div>
+							<div class="footer-units">
+								主办单位：<a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a><br>
+								Copyright © 2003-2020 <a href="http://localhost:8082/qidemo01/kaoyanbang" target="_blank">考研帮</a> All Rights Reserved<br>
+								<a href="http://beian.miit.gov.cn" target="_blank">*************</a>
+							</div>
+							<div class="footer-media">
+								<a href="/" target="_blank"><i class="el-icon-service" title="官方微信"></i>官方微信</a>
+								<a href="/" target="_blank"><i class="el-icon-service" title="官方微博"></i>官方微博</a>
+							</div>
+							<div class="footer-msg">
+								服务热线：88888888888<br>
+								客服邮箱：88888888@qq.com<br>
+							</div>
+						</div>
+					</div>
+				</el-footer>
+			</el-container>
+		</div>
+	</body>
+	<!-- import Vue before Element -->
+	<script src="js/loginstate.js"></script>
+		
+</html>

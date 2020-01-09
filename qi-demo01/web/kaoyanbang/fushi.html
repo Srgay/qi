@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+		<link type="text/css" rel="stylesheet" href="css/foot.css" />
+		<link type="text/css" rel="stylesheet" href="css/head.css" />
+		<link type="text/css" rel="stylesheet" href="css/fsnew.css" />
+	</head>
+	<body>
+		<div id="app" class="app">
+			<el-container>
+				<el-header class="top-nav-wrapper" style="height: 40px;">
+					<div class="main top-nav clearfix">
+						<div class="top-nav-list">
+							<a href="/" class="top-nav-home"> </a>
+							<a href="/kyzx/zcdh/" target="_self">政策</a>
+							<a href="/kyinfo/" target="_self">资讯</a>
+							<a href="/sch/" target="_self">院校库</a>
+							<a href="/zyk/" target="_self">专业库</a>
+							<a href="/zsml/zyfx_search.jsp" target="_self">硕士目录</a>
+							<a href="/sswbgg/" target="_self">网报公告</a>
+							<a href="/yzwb/" target="_self">统考网报</a>
+							<a href="/tm/" target="_blank">推免服务</a>
+							<a href="/yztj/" target="_self">网上调剂</a>
+							<a href="/zsgs/" target="_self">信息公开</a>
+							<a href="/zxdy/" target="_self">在线咨询</a>
+							<span class="top-nav-hide">
+								<span class="top-nav-point">• • •</span>
+								<div class="top-nav-pop">
+									<ul>
+										<li><a href="/z/yzzyss/" target="_self">专业学位</a></li>
+										<li><a href="/yzzt/zyqmjx/" target="_self">专业解析</a></li>
+										<li><a href="/yzzt/kyfs2019/" target="_self">复试分数线</a></li>
+										<li><a href="/bsmlcx/index.jsp" target="_self">博士目录</a></li>
+										<li class="last"><a href="/bsbm/" target="_self">博士网报</a></li>
+									</ul>
+								</div>
+							</span>
+						</div>
+						<div class="top-nav-load">
+							<a :href="loginurl" target="_blank">{{state}}</a>
+							|
+							<a :style="regist" href="http://localhost:8082/qidemo01/kaoyanbang/regist.html" target="_blank">注册</a>
+							|
+							<a href="/help/">帮助中心</a>
+						</div>
+
+					</div>
+				</el-header>
+				<el-main style="height: 700px;">
+					<div class="main">
+						<el-aside style="height: 678px;float: left;width: 1200px;">
+							<div class="w1000">
+								<div class="zsleft">
+									<dl class="specialTitle" id="zhuanerTitle">
+										<dt>
+											<strong>
+												<a href="#">考研复试</a>
+											</strong>
+										</dt>
+										<dd>
+											<a href="#">复试信息</a>
+
+										</dd>
+										<dd>
+											<a href="#">复试新闻</a>
+										</dd>
+										<dd>
+											<a href="#">复试经验</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="zsright">
+									<div class="zyTitleBg">
+										考研复试新闻
+									</div>
+									<ul class="list areaZslist">
+										  
+										<li  v-for="(item,index) in items" v-if="index<7">
+											<a href="#">{{ item.title }}</a>
+											<span class="fr">{{ item.data }}</span>
+										</li>
+									</ul>
+									
+								</div>
+							</div>
+					</div>
+					</el-aside>
+
+				</el-main>
+				<el-footer style="height: 200px;">
+					<div class="main footer-wrapper">
+						<div class="footer">
+							<div class="footer-list">
+								<a href="//www.chsi.com.cn/" target="_blank">学信网</a>
+								<a href="http://chesicc.moe.edu.cn/zxgw/zxjs/201604/20160418/1529506207.html" target="_blank">中心简介</a>
+								<a href="/doc/about.jsp" target="_blank">关于我们</a>
+								<a href="/doc/copyright.jsp" target="_blank">版权声明</a>
+								<a href="/help/" target="_blank">帮助中心</a>
+								<a href="/sitemap.jsp" target="_blank">网站地图</a>
+								<a href="/doc/adv.jsp" target="_blank">宣传代理</a>
+							</div>
+							<div class="footer-units">
+								主办单位：<a href="http://chesicc.moe.edu.cn/" target="_blank">全国高等学校学生信息咨询与就业指导中心</a><br>
+								Copyright © 2003-2020 <a href="//www.chsi.com.cn/" target="_blank">学信网</a> All Rights Reserved<br>
+								<a href="http://beian.miit.gov.cn" target="_blank">京ICP备19004913号</a>
+							</div>
+							<div class="footer-media">
+								<a href="/kyzx/kp/wbwx.shtml" target="_blank"><i class="iconfont" title="官方微信"></i>官方微信</a>
+								<a href="/kyzx/kp/wbwx.shtml" target="_blank"><i class="iconfont" title="官方微博"></i>官方微博</a>
+							</div>
+							<div class="footer-msg">
+								服务热线：010-82199588<br>
+								客服邮箱：kefu#chsi.com.cn（将#替换为@）<br>
+							</div>
+						</div>
+					</div>
+				</el-footer>
+			</el-container>
+		</div>
+	</body>
+	<!-- import Vue before Element -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- import JavaScript -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script>
+		var example1 = new Vue({
+			el: '.app',
+			data: {
+				visible: false,
+				state: '登录',
+				loginurl: 'http://localhost:8082/qidemo01/kaoyanbang/login.html',
+				regist: '',
+				items: []
+			},
+			created() {
+				this.getlist();
+				this.loginstate();
+			},
+			methods: {
+				handleLogin() {
+					
+				},
+				loginstate() {
+					let username = Cookies.get("username");
+					console.log(Cookies.get("username"));
+					if (username != null) {
+						this.state = '欢迎你' + username;
+						this.loginurl = 'my.html'
+						this.regist = 'display: none;';
+					}
+				},
+				getlist() {
+					axios.get('http://localhost:8081/fsnew')
+						.then(function(res) {
+							
+							console.log(res);
+							example1.items = res.data;
+							
+						})
+						.catch(function(error) {
+							
+							console.log(error);
+							
+						});
+				},
+			}
+		});
+	</script>
+</html>

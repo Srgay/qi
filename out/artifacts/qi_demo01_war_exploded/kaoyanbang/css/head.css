@@ -1,0 +1,113 @@
+.top-nav-wrapper {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #f7f9fa;
+  font-size: 12px;
+}
+.top-nav-wrapper a {
+  color: #333;
+}
+.top-nav-wrapper a.hot {
+  color: #ee6464;
+}
+.top-nav-wrapper a:hover {
+  text-decoration: underline;
+}
+.top-nav-wrapper .top-nav {
+  width: 1200px;
+  margin: 0 auto;
+}
+.top-nav-wrapper .top-nav-list {
+  float: left;
+  width: 980px;
+  height: 40px;
+}
+.top-nav-wrapper .top-nav-list a {
+  margin: 0 10px;
+}
+.top-nav-wrapper .top-nav-list a.top-nav-home {
+  display: inline-block;
+  width: 45px;
+  height: 40px;
+  padding-left: 50px;
+  margin-right: 15px;
+  margin-left: 0px;
+  margin-top: -1px;
+  background-image: url('https://t2.chei.com.cn/yz/assets/images/logo-min.png');
+  background-image: -webkit-image-set(url('https://t2.chei.com.cn/yz/assets/images/logo-min.png') 1x, url('https://t4.chei.com.cn/yz/assets/images/logo-min2x.png') 2x);
+  background-repeat: no-repeat;
+  background-position: 0 11px;
+  color: #1787e0;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.top-nav-wrapper .top-nav-list a.top-nav-home:hover{
+  text-decoration: none;
+}
+.top-nav-wrapper .top-nav-load {
+  float: right;
+  width: 200px;
+  height: 40px;
+  text-align: right;
+}
+.top-nav-wrapper .top-nav-load a {
+  margin: 0 5px;
+}
+.top-nav-hide {
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #999;
+}
+.top-nav-hide:hover {
+  color: #333;
+}
+.top-nav-hide:hover .top-nav-pop {
+  display: block;
+}
+.top-nav-hide .iconfont {
+  font-size: 12px;
+  margin-right: -5px;
+}
+.top-nav-pop{
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  padding-top: 14px;
+  z-index: 9999;
+}
+.top-nav-hide ul {
+  width: 135px;
+  padding: 6px 0;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+  background: #fff;
+  box-shadow: 2px 2px 8px #cdcdcd;
+}
+.top-nav-hide li {
+  line-height: 35px;
+}
+.top-nav-wrapper .top-nav-hide li a {
+  display: block;
+  margin: 0 10px;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.top-nav-wrapper .top-nav-hide li.last a {
+  border-bottom: none;
+}
+.top-nav-wrapper .top-nav-hide li a:hover {
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0 10px;
+  border-bottom: 1px dashed #f2f2f2;
+  font-weight: 700;
+  text-decoration: none;
+}
+.top-nav-wrapper .top-nav-hide li.last a:hover {
+  border-bottom: none;
+}
+.top-nav-point {
+    font-family: tahoma, arial, 'Microsoft YaHei', "Hiragino Sans GB", SimSun, sans-serif;
+}

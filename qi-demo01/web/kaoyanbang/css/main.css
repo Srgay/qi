@@ -1,0 +1,61 @@
+body {
+	margin: 0 0 0 0;
+}
+.clearfix:after {
+	content: "\0020";
+	display: block;
+	clear: both;
+	height: 0
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.clearFloat {
+	clear: both;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden
+}
+
+.main {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+.el-header,
+.el-footer,
+,
+.el-aside,
+.el-main {
+	text-align: center;
+}
+
+body>.el-container {
+	margin-bottom: 40px;
+}
+
+.el-footer {
+	background: #282828;
+	color: #ababab;
+}
+
+.el-header,
+.el-footer,
+.el-aside,
+.el-main,
+.el-container,
+div {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+ }

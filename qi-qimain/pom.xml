@@ -10,9 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>qi-qimain</artifactId>
 
-
     <dependencies>
-
         <dependency>
             <groupId>com.qi</groupId>
             <artifactId>qi-common-util</artifactId>
@@ -23,6 +21,11 @@
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
             <version>4.8.73.ALL</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.5</version>
         </dependency>
 
     </dependencies>

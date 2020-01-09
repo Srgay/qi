@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link rel="stylesheet" href="css/yuanxiao.css">
+		<title>院校查询</title>
+	</head>
+	<body>
+		<div class="app">
+			<el-card>
+				<!-- 搜索与添加区域 -->
+				<el-row :gutter="20">
+
+					<el-col :span="8">
+						<div class="grid-content logo">
+							<img src="../img/logo.png"></img>
+						</div>
+					</el-col>
+					<el-col :span="8">
+						<div class="grid-content bg-purple"></div>
+					</el-col>
+					<el-col :span="8">
+						<el-input style="margin: 10px 0 0 0;" placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getSchoolList">
+							<el-button slot="append" icon="el-icon-search" @click="getSchool"></el-button>
+						</el-input>
+					</el-col>
+				</el-row>
+				<el-row :gutter="20" style="margin-left: 0px;margin-right: 0px;box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);">
+					<el-col :span="4">
+						<div class="list-th">地区选择<i class="el-icon-arrow-right"></i></div>
+					</el-col>
+					<el-col :span="20">
+						<el-radio-group @change="queryChange" v-model="queryInfo.query" v-for="city in citylist">
+							<el-radio-button :label="city.city"></el-radio-button>
+						</el-radio-group>
+					</el-col>
+
+
+				</el-row>
+				<el-row :gutter="20">
+					<el-col :span="20">
+						<p class="text">注：各招生单位的院校库信息由其自主维护，如有疑问，请咨询发布单位</p>
+					</el-col>
+				</el-row>
+				<!-- 用户列表区域 -->
+				<el-table :data="schoollist" border stripe class="maintable">
+					<el-table-column type="index"></el-table-column>
+					<el-table-column label="院校名称" prop="school"></el-table-column>
+					<el-table-column label="邮箱" prop="email"></el-table-column>
+					<el-table-column label="电话" prop="telephone"></el-table-column>
+					<el-table-column label="所在地" prop="address"></el-table-column>
+					<el-table-column label="学校官网" width="180px">
+						<template slot-scope="scope">
+							<el-button style="width: 100px;" type="primary" icon="el-icon-right" @click="showEditDialog(scope.row.url)">
+							</el-button>
+						</template>
+					</el-table-column>
+				</el-table>
+
+				<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum"
+				 :page-sizes="[1, 2, 5, 10]" :page-size="queryInfo.pagesize" layout="total, sizes, prev, pager, next, jumper"
+				 :total="total">
+				</el-pagination>
+			</el-card>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '.app',
+			data: {
+				queryInfo: {
+					query: '北京',
+					// 当前的页数
+					pagenum: 1,
+					// 当前每页显示多少条数据
+					pagesize: 5
+				},
+				schoollist: [],
+				citylist: [],
+				total: 0,
+				city: '',
+			},
+			created() {
+				this.getCityList();
+				this.getSchoolList();
+			},
+			methods: {
+				queryChange() {
+					this.getSchoolList();
+				},
+				getSchoolList() {
+					axios.get('http://localhost:8081/schools', {
+						params: this.queryInfo
+					}).then(res => {
+						if (res.code == 500) {
+							return this.$message.error('获取用户列表失败！')
+						}
+						this.schoollist = res.data.data.list
+						this.total = res.data.data.total
+						console.log(res)
+					})
+				},
+				getSchool() {
+					axios.get('http://localhost:8081/school', {
+						params: this.queryInfo
+					}).then(res => {
+						if (res.code == 500) {
+							return this.$message.error('获取用户列表失败！')
+						}
+						this.schoollist = res.data.data.list
+						this.total = res.data.data.total
+						console.log(res)
+					})
+				},
+				getCityList() {
+					axios.get('http://localhost:8081/citys').then(res => {
+						if (res.code == 500) {
+							return this.$message.error('获取城市列表失败！')
+						}
+						this.citylist = res.data.data
+						console.log(res)
+					})
+				},
+				showEditDialog(url) {
+					window.open(url);
+				},
+				// 监听 pagesize 改变的事件
+				handleSizeChange(newSize) {
+					// console.log(newSize)
+					this.queryInfo.pagesize = newSize
+					this.getUserList()
+				},
+				// 监听 页码值 改变的事件
+				handleCurrentChange(newPage) {
+					console.log(newPage)
+					this.queryInfo.pagenum = newPage
+					this.getUserList()
+				},
+			}
+		})
+	</script>
+</html>
